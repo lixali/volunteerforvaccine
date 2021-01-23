@@ -18,20 +18,20 @@ signup_form.html - html of signup form itself
 ## Scheduler Flow
 Flow to sign up for a volunteer slot:
 1) Home page for the scheduler system with information: https://appointments.lacounty.gov/vaccinestaffing
-  -- Click "VOLUNTEER/STAFF SIGN UP" button to proceed to #2 (select site)
+  a) Click "VOLUNTEER/STAFF SIGN UP" button to proceed to #2 (select site)
 
 2) Shows each of the sites: https://appointments.lacounty.gov/vaccinestaffing/LocationsMap
-  -- Pick a site, click "VIEW SHIFTS" then "NON-CLINICAL ROLE" to proceed to #3 (select date)
+  a) Pick a site, click "VIEW SHIFTS" then "NON-CLINICAL ROLE" to proceed to #3 (select date)
 
 3) Shows next 7 days at specified site: https://appointments.lacounty.gov/vaccinestaffing/Calendar/63/3011
-  -- The "63/3011/" part of directory defines the site location
-  -- If you advance a page by clicking "NEXT WEEK MM/DD to MM/DD >" it advances by a week and adds page number to URL e.g. https://appointments.lacounty.gov/vaccinestaffing/Calendar/63/3011/1
-  -- total of 4 pages of shifts = 4 weeks (last week ends on Sunday, may change)
-  -- If you go back a page, page number is set to 0 (0 is default)
-  -- Click "All Day Shift 8-6:30" to sign up for a shift on specified date at specified site, proceed to #4 (sign up form)
+  a) The "63/3011/" part of directory defines the site location
+  b) If you advance a page by clicking "NEXT WEEK MM/DD to MM/DD >" it advances by a week and adds page number to URL e.g. https://appointments.lacounty.gov/vaccinestaffing/Calendar/63/3011/1
+  c) total of 4 pages of shifts = 4 weeks (last week ends on Sunday, may change)
+  d) If you go back a page, page number is set to 0 (0 is default)
+  e) Click "All Day Shift 8-6:30" to sign up for a shift on specified date at specified site, proceed to #4 (sign up form)
 
 4) Form to officially sign up for a volunteer shift, enter personal identifying information etc 
-  -- Click "SUBMIT" to submit form, confirmation is sent to email provided in form
+  a) Click "SUBMIT" to submit form, confirmation is sent to email provided in form
 
 ## Site locations
 Available sites:
