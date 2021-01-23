@@ -13,7 +13,7 @@ carriers = {
 
 def sendSMS(message):
         # Replace the number with your own, or consider using an argument\dict for multiple people.
-	to_number = '6077252345{}'.format(carriers['verizon'])
+	to_number = '0000000000{}'.format(carriers['verizon'])
 	auth = (gmail_user, gmail_password)
 
 	# Establish a secure session with gmail's outgoing SMTP server using your gmail account
