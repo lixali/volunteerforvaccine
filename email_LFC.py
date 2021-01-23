@@ -1,7 +1,7 @@
 import smtplib
 
-gmail_user = 'lfchesebrough@gmail.com'
-gmail_password = 'mmklndcfdjkpfdyc'
+gmail_user = ''
+gmail_password = ''
 
 # send an email from above gmail user account, 
 def sendEmail(message):
