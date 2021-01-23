@@ -16,13 +16,8 @@ scheduler_available_slot.html - html of scheduler page when there aren't any ava
 signup_form.html - html of signup form itself
 
 ## Scheduler Flow
-Flow to sign up for a volunteer slot:
 
-1. Item 1
-1. Item 2
-1. Item 3
-   1. Item 3a
-   1. Item 3b
+Steps from homepage to sign up for a volunteer slot:
   
 1. Home page for the scheduler system with information: https://appointments.lacounty.gov/vaccinestaffing
    1. Click "VOLUNTEER/STAFF SIGN UP" button to proceed to #2 (select site)
