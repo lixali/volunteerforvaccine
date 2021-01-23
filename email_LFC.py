@@ -6,7 +6,7 @@ gmail_password = ''
 # send an email from above gmail user account, 
 def sendEmail(message):
     sent_from = gmail_user
-    to = ['lfchesebrough@gmail.com', 'lx829382@dal.ca']
+    to = []
     subject = 'VACCINE SHIFT AVAILABLE'
     body = message
 
