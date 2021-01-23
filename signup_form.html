@@ -1,0 +1,344 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve - Appointments</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.css">
+    <link href="/lib/animate/animate.css" rel="stylesheet">
+    <link href="/lib/aos/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/site.css">
+    
+    <link rel="stylesheet" href="/css/bootstrap.sandstone.min.css">
+    
+    <style>
+        .bg-dhs {
+            background-color: #05445e !important;
+            border: 1px solid transparent;
+            border-radius: 0.25rem;
+        }
+
+        .dhs-font {
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #585b60;
+        }
+
+        .section-title {
+            font-size: 30px;
+            color: #222222;
+            display: inline-block;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .border-dhs {
+            border-color: #75e6da !important;
+        }
+    </style>
+
+    <style>
+        /** Loading Spinner */
+        .spinner-overlay {
+            background: rgba(0,0,0,.5);
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99999999;
+            text-align: center;
+            padding-top: 20%;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom">
+        <h5 class="my-0 mr-md-auto font-weight-normal text-primary">
+            <img src="/images/dph.gif" style="max-height:70px; float:left;" class="mr-2">
+            <span class="d-none">LA County Appointments<br><b>Department of Public Health</b></span>
+        </h5>
+        <nav class="my-2 my-md-0 mr-md-3">
+            <a class="p-2 text-dark" href="/vaccinestaffing">Home</a>
+        </nav>
+    </div>
+
+
+    <div class="container">
+        
+
+
+
+
+<div class="px-3 py-3  mx-auto text-center">
+    <h1>Schedule Your Volunteer Shift</h1>
+    <p class="lead">Please fill in the form below with all required information to confirm and reserve your shift.</p>
+</div>
+
+<div class="alert alert-primary text-center">
+    <p class="h3">Mega POD 4 – LACOE – Ed Center West</p>
+    <p class="h4">Non-Clinical Role</p>
+    <p class="h5">Saturday, January 23, 2021 at 8:00 AM</p>
+</div>
+
+<div class="text-danger text-bold my-2 validation-summary-valid" data-valmsg-summary="true"><ul><li style="display:none"></li>
+</ul></div>
+
+
+
+<script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/_KUxfxvAoJ4k7SaKyLbja4Mi/recaptcha__en.js" crossorigin="anonymous" integrity="sha384-L/zNoQ/SnGT+Q4YLUXmYu6r2W6snppfG9V4gpbk0edjZShoDLHiRridHcHI2Jb+T"></script><script src="https://www.google.com/recaptcha/api.js" async="" defer=""></script>
+
+<script>
+    function OnPost() {
+        event.preventDefault();
+
+        if (processAnswers())
+            grecaptcha.execute();
+    }
+    function SubmitForm() {
+        $("#reserveForm").submit();
+    }
+     function RecaptchaError() {
+        alert("Error validating submission. Please try a different browser.")
+    }
+</script>
+
+<form id="reserveForm" action="/vaccinestaffing/ReservePost" method="post" novalidate="novalidate">
+    <input type="hidden" id="date" name="date" value="1/23/2021">
+    <input type="hidden" id="timeSlotId" name="timeSlotId" value="3005">
+    <input type="hidden" id="QuestionAnswers" name="QuestionAnswers" value="">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="FirstName">First Name *</label>
+            <input type="text" class="form-control" placeholder="required" data-val="true" data-val-required="The First Name field is required." id="FirstName" name="FirstName" value="">
+            <span class="text-danger field-validation-valid" data-valmsg-for="FirstName" data-valmsg-replace="true"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="LastName">Last Name *</label>
+            <input type="text" class="form-control" placeholder="required" data-val="true" data-val-required="The Last Name field is required." id="LastName" name="LastName" value="">
+            <span class="text-danger field-validation-valid" data-valmsg-for="LastName" data-valmsg-replace="true"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Email">Email Address *</label>
+        <input type="email" class="form-control" placeholder="required" data-val="true" data-val-required="The Email Address field is required." id="Email" name="Email" value="">
+        <span class="text-danger field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+    </div>
+    <div class="form-group">
+        <label for="Phone">Phone Number * <small>(10 digit number only. ex:1235557890)</small></label>
+        <input type="tel" class="form-control numeric" placeholder="required" minlength="10" maxlength="10" data-val="true" data-val-required="The Phone Number field is required." id="Phone" name="Phone" value="">
+        <span class="text-danger field-validation-valid" data-valmsg-for="Phone" data-valmsg-replace="true"></span>
+    </div>
+    <div class="form-group">
+        <input type="hidden" class="form-control" placeholder="required" minlength="10" maxlength="10" id="YourPurpose" name="YourPurpose" value="">
+    </div>
+
+    <input type="hidden" value="1" data-val="true" data-val-required="The Preferred Contact Method field is required." id="ContactMethod" name="ContactMethod">
+
+    <div class="screener-error d-none alert alert-danger w-100" role="alert">
+        Please answer all required fields
+    </div>
+    
+<div class="divAdditionalQuestions">
+        <div class="form-group addl-question" data-fieldtypeid="1" data-servicequestionid="86">
+                <label for="86">Home Address *</label>
+            <input type="text" class="form-control addl-question-field" id="86" required="required">
+        </div>
+        <div class="form-group addl-question" data-fieldtypeid="1" data-servicequestionid="87">
+                <label for="87">City *</label>
+            <input type="text" class="form-control addl-question-field" id="87" required="required">
+        </div>
+        <div class="form-group addl-question" data-fieldtypeid="1" data-servicequestionid="88">
+                <label for="88">State *</label>
+            <input type="text" class="form-control addl-question-field" id="88" required="required">
+        </div>
+        <div class="form-group addl-question" data-fieldtypeid="1" data-servicequestionid="89">
+                <label for="89">County *</label>
+            <input type="text" class="form-control addl-question-field" id="89" required="required">
+        </div>
+        <div class="form-group addl-question" data-fieldtypeid="1" data-servicequestionid="90">
+                <label for="90">Zip Code *</label>
+            <input type="text" class="form-control addl-question-field" id="90" required="required">
+        </div>
+            <div class="form-group addl-question" data-fieldtypeid="4" data-servicequestionid="148">
+                    <label for="148">Type of Personnel *</label>
+                <select class="form-control addl-question-field" id="148">
+                        <option value=""></option>
+                        <option value="Public Volunteer">Public Volunteer</option>
+                        <option value="County DSW - DPH Staff">County DSW - DPH Staff</option>
+                        <option value="County DSW – All other County Department">County DSW – All other County Department</option>
+                        <option value="MHOAC DSW">MHOAC DSW</option>
+                </select>
+            </div>
+        <div class="form-group addl-question" data-fieldtypeid="1" data-servicequestionid="149">
+                <label for="149">County Employee Number (DPH and County DSW only)</label>
+            <input type="text" class="form-control addl-question-field" id="149">
+        </div>
+        <div class="form-group addl-question" data-fieldtypeid="1" data-servicequestionid="150">
+                <label for="150">Supervisor Name (DPH and County DSW only)</label>
+            <input type="text" class="form-control addl-question-field" id="150">
+        </div>
+        <div class="form-group addl-question" data-fieldtypeid="1" data-servicequestionid="151">
+                <label for="151">Supervisor Email (DPH and County DSW only)</label>
+            <input type="text" class="form-control addl-question-field" id="151">
+        </div>
+        <div class="form-group addl-question" data-fieldtypeid="1" data-servicequestionid="152">
+                <label for="152">Supervisor Phone (DPH and County DSW only)</label>
+            <input type="text" class="form-control addl-question-field" id="152">
+        </div>
+        <div class="form-group addl-question" data-fieldtypeid="1" data-servicequestionid="153">
+                <label for="153">Department Name (DPH and County DSW only)</label>
+            <input type="text" class="form-control addl-question-field" id="153">
+        </div>
+            <div class="form-group addl-question" data-fieldtypeid="4" data-servicequestionid="154">
+                    <label for="154">Bureau Name (DPH Only)</label>
+                <select class="form-control addl-question-field" id="154">
+                        <option value=""></option>
+                        <option value="Disease Control">Disease Control</option>
+                        <option value="Executive Office">Executive Office</option>
+                        <option value="Health Promotion">Health Promotion</option>
+                        <option value="Health Protection">Health Protection</option>
+                        <option value="Operations Support">Operations Support</option>
+                </select>
+            </div>
+
+    <div class="form-group">
+        <div class="alert alert-primary" role="alert">
+            <b>*</b> Denotes required field
+        </div>
+    </div>
+</div>
+
+    <div class="screener-error d-none alert alert-danger w-100" role="alert">
+        Please answer all required fields
+    </div>
+    <div class="text-right">
+        <a class="mr-4 btn-lg text-muted" href="/vaccinestaffing/Calendar/66/3005">Cancel</a>
+        <button type="submit" class="btn btn-lg btn-primary" onclick="OnPost()">Submit</button>
+        <div id="recaptcha" class="g-recaptcha" data-sitekey="6LfR6isaAAAAAFBDgcLQNMtT_Z43hGC98cY1o7WM" data-callback="SubmitForm" data-error-callback="RecaptchaError" data-size="invisible"><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LfR6isaAAAAAFBDgcLQNMtT_Z43hGC98cY1o7WM&amp;co=aHR0cHM6Ly9hcHBvaW50bWVudHMubGFjb3VudHkuZ292OjQ0Mw..&amp;hl=en&amp;v=_KUxfxvAoJ4k7SaKyLbja4Mi&amp;size=invisible&amp;cb=9nsok1z0my99" width="256" height="60" role="presentation" name="a-c1hwyl4aghmt" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
+    </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8Nj6XB9c5dtOsCquiwo7JAKexJ_HrrNo0ts3CTpuPAXxyopVjc-B4-7HyNmp-Hpv7EDScjTuxsF2k4VF-GCzifUWoDvx-pZaU2aEu8I4bUx4fAQ0qxFnWiv2q8gVi0ldX7LMmvOvMP7i6xDcH-FXuhI"></form>
+
+
+
+
+
+<div class="spinner-overlay">
+    <div class="d-flex justify-content-center text-white">
+        <div class="spinner-border text-white" role="status">
+            <span class="sr-only text-white">Loading...</span>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+        <footer class="base-footer pt-5 my-5 border-top">
+            
+    <div class="row">
+        <div class="col-2 col-md">
+            <img class="mb-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Seal_of_Los_Angeles_County%2C_California.svg/240px-Seal_of_Los_Angeles_County%2C_California.svg.png" alt="" width="100" height="100">
+            <small class="d-block ml-4 mb-3 text-muted">LA County</small>
+        </div>
+    </div>
+        </footer>
+</div>
+    <script src="/lib/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/fontawesome.min.js" integrity="sha256-bP9MBDJ4xkv81w/A2cgwRonMI+eelvZwm7e8rP5JIxA=" crossorigin="anonymous"></script>
+    <script src="/js/site.js?v=8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U"></script>
+
+    
+    
+
+    <script src="/lib/aos/aos.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            $('.numeric').on("keypress keyup blur", function (event) {
+                //$(this).val($(this).val().replace(/[^\d].+/, ""));
+                if ((event.which < 48 || event.which > 57)) {
+                    event.preventDefault();
+                }
+            });
+        });
+        function processAnswers() {
+            $('.spinner-overlay').show();
+
+            //Check Form Validation
+            var validation = $("#reserveForm"); // My From Id
+            if (!validation.valid()) {
+                $('.screener-error').addClass('d-block');
+                $('.spinner-overlay').hide();
+                return false;
+            }
+
+            var hasError = false;
+            //Check if Additional Field has answeres
+            $('.addl-question').each(function () {
+                if ($(this).find('.addl-question-field').prop('required')) {
+                    var type = $(this).data('fieldtypeid');
+                    var servicequestionid = $(this).data('servicequestionid');
+                    if ((type == 1 || type == 2) && $(this).find('.addl-question-field').val() === "") {
+                        //If text field is empty
+                        hasError = true;
+                        return false;
+                    }
+                    else if (type == 3 && $('input[name="' + servicequestionid + '"]:checked').length == 0) {
+                        // If no radio button is selected
+                        hasError = true;
+                        return false;
+                    }
+                    else if (type == 4 && !$('#' + servicequestionid + ' :selected').val()) {
+                        hasError = true;
+                        return false;
+
+                    }
+                };
+            });
+
+            if (hasError) {
+                $('.screener-error').addClass('d-block');
+                $('.spinner-overlay').hide();
+                return false;
+            }
+
+            var list = [];
+            $('.addl-question').each(function (index) {
+                var type = $(this).data('fieldtypeid');
+                var servicequestionid = $(this).data('servicequestionid');
+                var answer = ""
+                if (type == 1 || type == 2) {
+                    answer = $('#' + servicequestionid).val()
+                }
+                else if (type == 3) {
+                    answer = $('input[name="' + servicequestionid + '"]:checked').val()
+                }
+                else if (type == 4) {
+                    answer = $('#' + servicequestionid + ' :selected').val()
+                }
+
+                var json = {
+                    "ServiceQuestionId": servicequestionid,
+                    "Answer": answer
+                };
+
+                list.push(json);
+            });
+
+            $('#QuestionAnswers').val(JSON.stringify(list));
+            return true;
+        }
+    </script>
+
+
+
+<div style="visibility: hidden; position: absolute; width: 100%; top: -10000px; left: 0px; right: 0px; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.5;"></div><div style="margin: 0px auto; top: 0px; left: 0px; right: 0px; position: absolute; border: 1px solid rgb(204, 204, 204); z-index: 2000000000; background-color: rgb(255, 255, 255); overflow: hidden;"><iframe title="recaptcha challenge" src="https://www.google.com/recaptcha/api2/bframe?hl=en&amp;v=_KUxfxvAoJ4k7SaKyLbja4Mi&amp;k=6LfR6isaAAAAAFBDgcLQNMtT_Z43hGC98cY1o7WM&amp;cb=bd6m9k2047h6" name="c-c1hwyl4aghmt" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" style="width: 100%; height: 100%;"></iframe></div></div></body></html>
